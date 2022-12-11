@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: Poppins;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+
+	::-webkit-scrollbar {
+		width: 0; /* Remove scrollbar space */
+		background: transparent; /* Optional: just make scrollbar invisible */
+	}
+}
+
+@layer components {
+	.nav-hover {
+		@apply !text-secondary bg-secondary-300 transition-all;
+	}
+
+	.nav-active {
+		@apply !border-secondary;
+	}
+}
