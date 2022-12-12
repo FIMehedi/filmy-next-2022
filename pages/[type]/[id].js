@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Details from '../../components/Details';
 import LeftSideNav from '../../components/LeftAside';
-import DpAndMoodToggler from '../../components/shared/DpAndMoodToggler';
+import DarkMoodToggler from '../../components/shared/DarkMoodToggler';
 import Search from '../../components/shared/Search';
 import { getCredits, getDetails } from '../../services/TMDB';
 
@@ -19,7 +19,7 @@ const DetailsPage = ({ movieDetails, credits }) => {
 							<Search />
 						</div>
 						<div className="w-[250px] pr-5">
-							<DpAndMoodToggler />
+							<DarkMoodToggler />
 						</div>
 					</div>
 					<Details movie={movieDetails} credits={credits} />
@@ -41,21 +41,8 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-	// const trending = await getTrending();
-	// const popularMovies = await getPopular('movie');
-	// const popularTvs = await getPopular('tv');
-	// const upcomingMovies = await getUpcoming();
-	// const all = [...trending, ...popularMovies, ...popularTvs, ...upcomingMovies];
-	const all = [];
 	return {
-		paths: all.map((movie) => {
-			return {
-				params: {
-					type: movie.media_type || 'movie',
-					id: movie.id + '',
-				},
-			};
-		}),
+		paths: [],
 		fallback: true,
 	};
 };

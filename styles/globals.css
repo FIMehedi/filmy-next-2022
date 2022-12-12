@@ -26,3 +26,11 @@
 		@apply !border-secondary;
 	}
 }
+
+.slick-slide {
+	float: none !important;
+}
+
+.slick-track {
+	display: flex !important;
+}

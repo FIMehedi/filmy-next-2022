@@ -20,7 +20,7 @@ const Details = ({ movie, credits }) => {
 		return <DetailsPageNotFound msg={movie.status_message} />;
 
 	return (
-		<div className="px-5">
+		<div className="px-5 mb-4">
 			<div className="max-h-[350px] rounded-2xl overflow-hidden relative mb-4">
 				<Image
 					src={
